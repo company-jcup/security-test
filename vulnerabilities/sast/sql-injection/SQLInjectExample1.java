@@ -13,6 +13,10 @@ public class FirstExample {
    public static void main(String[] args) {
    Connection conn = null;
    Statement stmt = null;
+      
+   /* now make it vulnerable...*/   
+   String param1 = args[0];
+      
    try{
       //STEP 2: Register JDBC driver
       Class.forName("com.mysql.jdbc.Driver");
@@ -25,7 +29,7 @@ public class FirstExample {
       System.out.println("Creating statement...");
       stmt = conn.createStatement();
       String sql;
-      sql = "SELECT id, first, last, age FROM Employees";
+      sql = "SELECT id, first, last, age FROM Employees where age="+param1; // vulnerability
       ResultSet rs = stmt.executeQuery(sql);
 
       //STEP 5: Extract data from result set
