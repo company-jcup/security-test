@@ -3,6 +3,9 @@ package company.jcup.security_test.sql;
 //STEP 1. Import required packages
 import java.sql.*;
 
+/**
+ * SQL injection example.
+ */
 public class SQLInjectExample1 {
    // JDBC driver name and database URL
    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
